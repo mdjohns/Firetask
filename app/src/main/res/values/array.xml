@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="quotes">
+        <item>“The Best Way To Get Started Is To Quit Talking And Begin Doing.” – Walt Disney</item>
+        <item>“The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.” – Winston Churchill</item>
+        <item>“Don’t Let Yesterday Take Up Too Much Of Today.” – Will Rogers</item>
+        <item>“You Learn More From Failure Than From Success. Don’t Let It Stop You. Failure Builds Character.” – Unknown</item>
+        <item>“It’s Not Whether You Get Knocked Down, It’s Whether You Get Up.” – Inspirational Quote By Vince Lombardi</item>
+        <item>“If You Are Working On Something That You Really Care About, You Don’t Have To Be Pushed. The Vision Pulls You.” – Steve Jobs</item>
+        <item> “People Who Are Crazy Enough To Think They Can Change The World, Are The Ones Who Do.” – Rob Siltanen</item>
+        <item>“Failure Will Never Overtake Me If My Determination To Succeed Is Strong Enough.” – Og Mandino</item>
+        <item>“Entrepreneurs Are Great At Dealing With Uncertainty And Also Very Good At Minimizing Risk. That’s The Classic Entrepreneur.” – Mohnish Pabrai</item>
+        <item>“We May Encounter Many Defeats But We Must Not Be Defeated.” – Maya Angelou</item>
+        <item>“Knowing Is Not Enough; We Must Apply. Wishing Is Not Enough; We Must Do.” – Johann Wolfgang Von Goethe</item>
+        <item>“Imagine Your Life Is Perfect In Every Respect; What Would It Look Like?” – Brian Tracy</item>
+        <item>“We Generate Fears While We Sit. We Overcome Them By Action.” – Dr. Henry Link</item>
+        <item>“Whether You Think You Can Or Think You Can’t, You’re Right.” – Quote By Henry Ford</item>
+        <item>“Security Is Mostly A Superstition. Life Is Either A Daring Adventure Or Nothing.” – Life Quote By Helen Keller</item>
+    </string-array>
+</resources>

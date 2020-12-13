@@ -1,0 +1,45 @@
+<resources>
+    <dimen name="divider_height">2dp</dimen>
+    <dimen name="divider_margin_top">8dp</dimen>
+    <dimen name="divider_margin_bottom">8dp</dimen>
+
+    <!--Card-->
+    <dimen name="card_title_text_size">20sp</dimen>
+    <dimen name="card_internal_margin">10dp</dimen>
+    <dimen name="card_container_margin">20dp</dimen>
+    <dimen name="card_settings_title_margin_bottom">8dp</dimen>
+
+    <!--Main Activity Greeting-->
+    <dimen name="greeting_layout_padding">10dp</dimen>
+
+    <!--Main Task Activity-->
+    <dimen name="no_task_icon_height">60dp</dimen>
+    <dimen name="no_task_icon_width">60dp</dimen>
+    <dimen name="no_task_icon_margin_top">100dp</dimen>
+    <dimen name="task_category_margin_top">6dp</dimen>
+    <dimen name="recycler_margin_top">6dp</dimen>
+    <dimen name="category_options_margin_bottom">8dp</dimen>
+    <dimen name="task_edit_icon_padding">6dp</dimen>
+
+    <!--Add Task / Task Category Fragment-->
+    <dimen name="edit_text_padding">10dp</dimen>
+
+    <!--Sign Up / Log In-->
+    <dimen name="firetask_title_text_size">50sp</dimen>
+    <dimen name="firetask_title_padding">80dp</dimen>
+    <dimen name="input_padding">20dp</dimen>
+    <dimen name="input_marginTop">20dp</dimen>
+    <dimen name="btn_height">60dp</dimen>
+    <dimen name="btn_text_size">20sp</dimen>
+    <dimen name="btn_margin_top">20dp</dimen>
+    <dimen name="sign_in_link_margin_start">10dp</dimen>
+    <dimen name="helper_link_margin_top">10dp</dimen>
+
+    <!--User Settings-->
+    <dimen name="settings_button_margin">10dp</dimen>
+    <!--User Settings Form Dialog-->
+    <dimen name="form_dialog_margin">20dp</dimen>
+    <dimen name="form_input_padding">6dp</dimen>
+    <dimen name="form_container_padding">15dp</dimen>
+
+</resources>

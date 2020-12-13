@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">Firetask</string>
+
+    <!--Top Menu-->
+    <string name="search_menu_label">Search</string>
+    <string name="share_menu_label">Share</string>
+    <string name="account_settings_label">Account Settings</string>
+    <string name="help_label">Help</string>
+    <string name="user_settings_title">Firetask / Settings</string>
+    <string name="task_history_title">Firetask / History</string>
+
+    <!--Bottom Menu-->
+    <string name="task_history_label">Task History</string>
+    <string name="new_category_label">New Category</string>
+    <string name="sign_out_label">Sign Out</string>
+
+
+    <!--Log In / Sign Up-->
+    <string name="firetask_title">Firetask</string>
+    <string name="email_hint">Enter your email</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="register_btn_label">Register</string>
+    <string name="sign_in_btn_label">Sign In</string>
+    <string name="have_account">Have an Account?</string>
+    <string name="need_account">Need an Account?</string>
+
+    <!--Main Task Activity-->
+    <string name="no_tasks_text">Add a new task category to get started!</string>
+    <string name="new_category_title">New Task Category</string>
+    <string name="new_category_hint">Category Name</string>
+    <string name="first_task_hint">First Task</string>
+    <string name="add_task_text">Add Task</string>
+    <string name="category_options_menu">Category Options Menu</string>
+
+    <!--Help Dialog-->
+    <string name="help_title">Firetask Help</string>
+    <string name="help_content">
+        Add a new task category using the menu at the bottom.
+        Add tasks to each category by selecting the "Add" button in the category.
+        You can add multiple categories.
+        Once you\'ve completed tasks, check your progress on the Task History page.
+    </string>
+    <string name="help_btn_label">Got it!</string>
+
+
+
+    <!--Settings-->
+    <string name="settings_title">User Settings</string>
+    <string name="change_password_btn_label">Change Password</string>
+    <string name="change_email_btn_label">Change E-mail</string>
+    <string name="close_account_btn_label">Close Account</string>
+
+    <!--Settings / Form Dialog-->
+    <string name="password_title">Change Password</string>
+    <string name="email_title">Change E-Mail</string>
+    <string name="close_account_title">Close Account</string>
+    <string name="close_account_text">If you\'re sure you want to close your account, confirm below</string>
+    <string name="new_password_hint">New password</string>
+    <string name="password_confirm_hint">Confirm New Password</string>
+    <string name="new_email_hint">New email</string>
+    <string name="email_confirm_hint">Confirm new email</string>
+    <string name="submit_btn_label">Submit</string>
+
+</resources>
