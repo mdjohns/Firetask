@@ -129,7 +129,7 @@ public class HomeTaskActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Firebase Auth
-        mAuth = FireUtil.initializeAuth();
+        mAuth = FirebaseAuth.getInstance();
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -167,11 +167,10 @@ public class HomeTaskActivity extends AppCompatActivity
         });
 
         // Firestore and RecyclerView Init
-        mDB = FireUtil.initializeFirestore();
-        final CollectionReference allUsers = FireUtil.getAllUsers(mDB);
-        final String uuid = FireUtil.getUuid(mAuth);
-        DocumentReference userDoc = FireUtil.getUserDocument(allUsers, uuid);
-        //populateRecycler(userDoc);
+        mDB = FirebaseFirestore.getInstance();
+        final CollectionReference allUsers = mDB.collection("users");
+        final String uuid = mAuth.getUid();
+        //DocumentReference userDoc = FireUtil.getUserDocument(allUsers, uuid);
         addTaskRecyclerView();
     }
 
