@@ -1,10 +1,11 @@
 package com.ualr.firetask.models;
 
-import java.util.List;
+import java.util.ArrayList;
+
 
 public class TaskCategory {
     private String categoryName;
-    private List<Task> taskList;
+    private ArrayList<Task> tasks;
 
     public TaskCategory() {} // Empty constructor for Firestore
 
@@ -16,23 +17,42 @@ public class TaskCategory {
         this.categoryName = categoryName;
     }
 
-    public List<Task> getTaskList() {
-        return taskList;
+    public ArrayList<Task> getTasks() {
+        return tasks;
     }
 
-    public void setTaskList(List<Task> taskList) {
-        this.taskList = taskList;
+    public int getIndexFromName(String taskName) {
+        int result = -1;
+        for (int i = 0; i < tasks.size(); i++) {
+            if (tasks.get(i).getName().equals(taskName)) {
+                result = i;
+            }
+        }
+        return result;
+    }
+
+    public void setTasks(ArrayList<Task> tasks) {
+        this.tasks = tasks;
     }
 
     public Task getTask(int i) {
-        return taskList.get(i);
+        return tasks.get(i);
     }
 
-    public void updateTask(Task task, int i) {
-        taskList.set(i, task);
+    public void addTask(Task task) {
+        tasks.add(task);
     }
 
-    public int getTaskCount() {
-        return taskList.size();
+    public double getCompletionPercentage() {
+        double numComplete = 0;
+        int numElements = tasks.size();
+
+        for (Task task: tasks) {
+            if (task.isComplete()) {
+                numComplete++;
+            }
+        }
+
+        return numComplete / numElements;
     }
 }

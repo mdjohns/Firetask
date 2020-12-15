@@ -21,6 +21,11 @@
     <dimen name="category_options_margin_bottom">8dp</dimen>
     <dimen name="task_edit_icon_padding">6dp</dimen>
 
+    <!--Task History-->
+    <dimen name="history_timestamp_margin_right">10dp</dimen>
+    <dimen name="progress_bar_margin">10dp</dimen>
+    <dimen name="gif_size">200dp</dimen>
+
     <!--Add Task / Task Category Fragment-->
     <dimen name="edit_text_padding">10dp</dimen>
 

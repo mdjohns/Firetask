@@ -4,9 +4,34 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <LinearLayout
+        android:id="@+id/no_tasks_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/no_tasks_icon"
+            android:layout_width="@dimen/no_task_icon_width"
+            android:layout_height="@dimen/no_task_icon_height"
+            android:layout_marginTop="@dimen/no_task_icon_margin_top"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_announcement_24"/>
+        <TextView
+            android:id="@+id/no_tasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/no_tasks_text"
+            />
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/task_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/recycler_margin_top"
         android:scrollbars="vertical"
         android:scrollingCache="true"/>

@@ -8,12 +8,12 @@
     <string name="help_label">Help</string>
     <string name="user_settings_title">Firetask / Settings</string>
     <string name="task_history_title">Firetask / History</string>
+    <string name="search_menu_hint">Search for a Category</string>
 
     <!--Bottom Menu-->
-    <string name="task_history_label">Task History</string>
     <string name="new_category_label">New Category</string>
     <string name="sign_out_label">Sign Out</string>
-
+    <string name="motivation">Motivation</string>
 
     <!--Log In / Sign Up-->
     <string name="firetask_title">Firetask</string>
@@ -26,11 +26,36 @@
 
     <!--Main Task Activity-->
     <string name="no_tasks_text">Add a new task category to get started!</string>
+    <string name="new_task_title">New Task</string>
+    <string name="new_task_hint">Task Name</string>
     <string name="new_category_title">New Task Category</string>
     <string name="new_category_hint">Category Name</string>
     <string name="first_task_hint">First Task</string>
     <string name="add_task_text">Add Task</string>
+
+
+    <!--Task History-->
+    <string name="completion_title">Task Completion</string>
+    <string name="history_title">Task History</string>
+    <string name="good_job">Good Job!</string>
+
+
+    <!--Category Options Menu-->
     <string name="category_options_menu">Category Options Menu</string>
+    <string name="edit_category">Edit Category</string>
+    <string name="delete_category">Delete Category</string>
+
+    <!--Task/Task Category Edit Dialog-->
+    <string name="task_edit_title">Edit Task</string>
+    <string name="task_category_edit_title">Edit Category</string>
+    <string name="task_edit_hint">New Task Name</string>
+    <string name="task_category_edit_hint">New Task Category Name</string>
+    <string name="task_edit_confirm_btn_label">Confirm Edit</string>
+
+    <!--Delete Confirmation Dialog-->
+    <string name="confirm_delete">Are you sure you want to delete?</string>
+    <string name="delete_btn_label">Delete</string>
+    <string name="cancel_delete_btn_label">Cancel</string>
 
     <!--Help Dialog-->
     <string name="help_title">Firetask Help</string>
@@ -41,8 +66,6 @@
         Once you\'ve completed tasks, check your progress on the Task History page.
     </string>
     <string name="help_btn_label">Got it!</string>
-
-
 
     <!--Settings-->
     <string name="settings_title">User Settings</string>
@@ -60,5 +83,6 @@
     <string name="new_email_hint">New email</string>
     <string name="email_confirm_hint">Confirm new email</string>
     <string name="submit_btn_label">Submit</string>
+
 
 </resources>

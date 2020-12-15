@@ -18,7 +18,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:titleTextColor="@android:color/white"
-            app:popupTheme="@style/AppTheme" />
+            app:iconTint="@android:color/white" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -35,26 +35,6 @@
             app:layout_constraintTop_toTopOf="parent"
             />
 
-        <ImageView
-            android:id="@+id/no_tasks_icon"
-            android:layout_width="@dimen/no_task_icon_width"
-            android:layout_height="@dimen/no_task_icon_height"
-            app:layout_constraintTop_toBottomOf="@id/greeting_fragment_container"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/no_tasks"
-            android:layout_marginTop="@dimen/no_task_icon_margin_top"
-            android:src="@drawable/ic_baseline_announcement_24"/>
-        <TextView
-            android:id="@+id/no_tasks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/no_tasks_icon"
-            app:layout_constraintBottom_toTopOf="@id/active_fragment_container"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:text="@string/no_tasks_text"
-            />
         <FrameLayout
             android:id="@+id/active_fragment_container"
             android:layout_width="match_parent"

@@ -9,12 +9,6 @@
         android:iconTint="@android:color/white"
         app:showAsAction="always"/>
     <item
-        android:id="@+id/menu_search"
-        android:title="@string/search_menu_label"
-        android:icon="@drawable/ic_baseline_search_24"
-        android:iconTint="@android:color/white"
-        app:showAsAction="always"/>
-    <item
         android:id="@+id/menu_settings"
         android:title="@string/account_settings_label"
         app:showAsAction="collapseActionView"

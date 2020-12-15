@@ -3,12 +3,12 @@ package com.ualr.firetask.settings;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -76,10 +76,21 @@ public class FormSettingsDialogFragment extends DialogFragment {
 
         if (mDialogType.equals(emailForm)) {
             title.setText(R.string.email_title);
+
+            mFormInput.getEditText().setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+            mFormInputConfirm.getEditText().setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+
             mFormInput.setHint(R.string.email_hint);
             mFormInputConfirm.setHint(R.string.email_confirm_hint);
         } else if (mDialogType.equals(passwordForm)) {
             title.setText(R.string.password_title);
+
+            mFormInput.getEditText().setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            mFormInputConfirm.getEditText().setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+
+            mFormInput.setEndIconMode(TextInputLayout.END_ICON_PASSWORD_TOGGLE);
+            mFormInputConfirm.setEndIconMode(TextInputLayout.END_ICON_PASSWORD_TOGGLE);
+
             mFormInput.setHint(R.string.password_hint);
             mFormInputConfirm.setHint(R.string.password_confirm_hint);
         }
@@ -87,34 +98,44 @@ public class FormSettingsDialogFragment extends DialogFragment {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (fieldsMatch()) {
-                    if (mDialogType.equals(emailForm)) {
-                        String newEmail = mFormInput.getEditText().getText().toString();
-                        Log.d(TAG, "Submitting email change");
-                        mListener.onSubmitEmailChange(newEmail);
+                if (!fieldsEmpty()) {
+
+                    if (fieldsMatch()) {
+                        if (mDialogType.equals(emailForm)) {
+                            String newEmail = mFormInput.getEditText().getText().toString();
+                            Log.d(TAG, "Submitting email change");
+                            mListener.onSubmitEmailChange(newEmail);
+                            dismiss();
+                        }
+                        if (mDialogType.equals(passwordForm)) {
+                            String newPass = mFormInput.getEditText().getText().toString();
+                            Log.d(TAG, "Submitting password change");
+                            mListener.onSubmitPasswordChange(newPass);
+                            dismiss();
+                        }
                     }
-                    if (mDialogType.equals(passwordForm)) {
-                        String newPass = mFormInput.getEditText().getText().toString();
-                        Log.d(TAG, "Submitting password change");
-                        mListener.onSubmitPasswordChange(newPass);
-                    }
+
                 }
                 else {
-                    mFormInputConfirm.setErrorEnabled(true);
-                    Toast.makeText(getActivity(), "Please make sure both fields match before continuing", Toast.LENGTH_LONG).show();
+                    mFormInput.setError("Fields don't match!");
+                    mFormInputConfirm.setError("Fields don't match!");
                 }
             }
         });
     }
 
+    private boolean fieldsEmpty() {
+        String input1Contents = mFormInput.getEditText().getText().toString();
+        String input2Contents = mFormInput.getEditText().getText().toString();
 
-    public boolean fieldsMatch() {
-        if (mFormInput.getEditText() != null && mFormInputConfirm.getEditText() != null) {
-            return mFormInput.getEditText().getText().toString().equals(
-                    mFormInputConfirm.getEditText().toString()
-            );
-        }
-        return false;
+        return input1Contents.equals("") || input2Contents.equals("");
+    }
+
+    private boolean fieldsMatch() {
+        String input1Contents = mFormInput.getEditText().getText().toString();
+        String input2Contents = mFormInput.getEditText().getText().toString();
+
+        return input1Contents.equals(input2Contents);
     }
 
     public interface FormEventListener {

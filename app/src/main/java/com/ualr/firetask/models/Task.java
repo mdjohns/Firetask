@@ -1,17 +1,26 @@
 package com.ualr.firetask.models;
 
+import com.google.firebase.Timestamp;
+
+import java.util.Date;
+
 public class Task {
     private String name;
     private boolean isComplete;
-    private String timestampCreated;
-    private String timestampCompleted;
+    private Timestamp dateAdded;
+    private Timestamp dateComplete;
 
     public Task() {} // Empty constructor for Firestore
 
-    public Task(String name, boolean isComplete, String timestampCreated) {
+    public Task(String name, boolean isComplete, Timestamp dateAdded) {
         this.name = name;
         this.isComplete = isComplete;
-        this.timestampCreated = timestampCreated;
+        this.dateAdded = dateAdded;
+    }
+    public Task(String name) {
+        this.name = name;
+        this.isComplete = false;
+        this.dateAdded = new Timestamp(new Date());
     }
 
     public String getName() {
@@ -30,19 +39,19 @@ public class Task {
         isComplete = complete;
     }
 
-    public String getTimestampCreated() {
-        return timestampCreated;
+    public Timestamp getDateAdded() {
+        return dateAdded;
     }
 
-    public void setTimestampCreated(String timestampCreated) {
-        this.timestampCreated = timestampCreated;
+    public void setDateAdded(Timestamp dateAdded) {
+        this.dateAdded = dateAdded;
     }
 
-    public String getTimestampCompleted() {
-        return timestampCompleted;
+    public Timestamp getDateComplete() {
+        return dateComplete;
     }
 
-    public void setTimestampCompleted(String timestampCompleted) {
-        this.timestampCompleted = timestampCompleted;
+    public void setDateComplete(Timestamp dateComplete) {
+        this.dateComplete = dateComplete;
     }
 }

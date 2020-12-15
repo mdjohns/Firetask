@@ -2,6 +2,7 @@ package com.ualr.firetask.tasks;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,12 +55,14 @@ public class NewCategoryDialogFragment extends DialogFragment {
                     String newCategoryText = newCategory.getEditText().getText().toString();
                     String firstTaskText = firstTask.getEditText().getText().toString();
                     mListener.onNewCategoryAdded(newCategoryText, firstTaskText);
+                    dismiss();
                 }
+
             }
         });
     }
 
-    public boolean fieldsEmpty(TextInputLayout input1, TextInputLayout input2) {
+    private boolean fieldsEmpty(TextInputLayout input1, TextInputLayout input2) {
         return input1.getEditText().getText().toString().equals("")
                 && input2.getEditText().getText().toString().equals("");
     }
