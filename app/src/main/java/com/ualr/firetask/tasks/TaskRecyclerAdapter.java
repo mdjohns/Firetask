@@ -54,6 +54,7 @@ public class TaskRecyclerAdapter  extends RecyclerView.Adapter implements PopupM
         TaskCategoryViewHolder viewHolder = (TaskCategoryViewHolder) holder;
         final TaskCategory taskCategory = mItems.get(position);
         ArrayList<Task> tasks = taskCategory.getTasks();
+        Log.d(TAG, String.format("Adapter size: %d", mItems.size()));
 
         viewHolder.categoryTitle.setText(taskCategory.getCategoryName());
 
@@ -124,6 +125,10 @@ public class TaskRecyclerAdapter  extends RecyclerView.Adapter implements PopupM
     @Override
     public int getItemCount() {
         return this.mItems.size();
+    }
+
+    public void setNewContent(ArrayList<TaskCategory> newCategories) {
+        this.mItems = newCategories;
     }
 
     private class TaskCategoryViewHolder extends RecyclerView.ViewHolder {

@@ -84,7 +84,11 @@ public class TaskRecyclerFragment extends Fragment {
                     // User has task data, get list of TaskCategory
                     Map<String, Object> results = value.getData();
                     ArrayList<Map<String, Object>> categories = (ArrayList<Map<String, Object>>) results.get("categories");
+                    Log.d(TAG, String.format("RecyclerView task size: %d", categories.size()));
+
                     initRecycler(DataUtil.getTaskCategories(categories), view);
+
+
                 }
             }
         });

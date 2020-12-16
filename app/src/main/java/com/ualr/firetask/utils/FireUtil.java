@@ -4,6 +4,8 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,6 +34,10 @@ public class FireUtil {
     public static FirebaseAuth initializeAuth() {
         Log.d(TAG, "Initializing FirebaseAuth");
         return FirebaseAuth.getInstance();
+    }
+
+    public static boolean isUser(FirebaseAuth auth) {
+        return auth.getCurrentUser() != null;
     }
 
     public static String getUuid(FirebaseAuth auth) {
@@ -75,7 +81,17 @@ public class FireUtil {
                 ArrayList<TaskCategory> taskCategories = DataUtil.getTaskCategories(rawData);
                 taskCategories.add(newCategory);
 
-                userDoc.update("categories", taskCategories);
+                userDoc.update("categories", taskCategories).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, String.format("Successfully added new category: %s", newCategory.getCategoryName()));
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d(TAG, String.format("Failed to add new category: %s", newCategory.getCategoryName()));
+                    }
+                });
             }
         });
     }

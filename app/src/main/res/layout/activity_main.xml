@@ -36,10 +36,15 @@
             />
 
         <FrameLayout
+            android:orientation="vertical"
             android:id="@+id/active_fragment_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/greeting_fragment_container"/>
+            app:layout_constraintTop_toBottomOf="@id/greeting_fragment_container"
+            android:paddingBottom="100dp"
+            />
+
+
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav"
@@ -48,4 +53,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/menu_bottom"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -129,7 +129,7 @@ public class HomeTaskActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
+        mAuth = FireUtil.initializeAuth();
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -142,7 +142,6 @@ public class HomeTaskActivity extends AppCompatActivity
         };
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        initGreeting();
 
         bottomNav = findViewById(R.id.bottom_nav);
         bottomNav.setVisibility(View.VISIBLE);
@@ -166,12 +165,14 @@ public class HomeTaskActivity extends AppCompatActivity
             }
         });
 
+
+
         // Firestore and RecyclerView Init
-        mDB = FirebaseFirestore.getInstance();
-        final CollectionReference allUsers = mDB.collection("users");
-        final String uuid = mAuth.getUid();
-        //DocumentReference userDoc = FireUtil.getUserDocument(allUsers, uuid);
-        addTaskRecyclerView();
+        if (FireUtil.isUser(mAuth)) {
+            mDB = FirebaseFirestore.getInstance();
+            addTaskRecyclerView();
+            initGreeting();
+        }
     }
 
     public void toggleBottomNav() {
@@ -383,8 +384,6 @@ public class HomeTaskActivity extends AppCompatActivity
                 }
             }
         });
-
-        //FireUtil.addCategory(FireUtil.getAllUsers(mDB), userDoc, newCategory);
     }
 
     // New Task Interface Method
